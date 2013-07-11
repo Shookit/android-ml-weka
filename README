@@ -1,0 +1,6 @@
+To turn a basic Weka package into a android-compatible Weka package:
+1) Start as a Java project
+2) Remove all packages below weka.gui
+3) Get to compiling state
+4) Remove external libraries
+5) Get to compiling state (remove parsers and scanners for java_cup)
