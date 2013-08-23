@@ -4,3 +4,10 @@ To turn a basic Weka package into a android-compatible Weka package:
 3) Get to compiling state
 4) Remove external libraries
 5) Get to compiling state (remove parsers and scanners for java_cup)
+6) Convert to android project (copy src, .classpath)
+7) Remove any files with XML in the filename and an error
+7) Remove any files with Remote in the filename and an error
+7) Remove any files with Trie in the filename and an error
+8) Remove any errors that are beans related
+9) Remove any errors that are gui-related
+10) Fix (and document) any other removals
