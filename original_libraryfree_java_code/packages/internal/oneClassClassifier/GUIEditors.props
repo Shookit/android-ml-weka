@@ -1,3 +1,0 @@
-#generators
-weka.classifiers.meta.generators.NominalAttributeGenerator=weka.gui.GenericObjectEditor
-weka.classifiers.meta.generators.NumericAttributeGenerator=weka.gui.GenericObjectEditor
