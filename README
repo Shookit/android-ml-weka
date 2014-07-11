@@ -1,8 +1,16 @@
-Intellij setup:
+This project is a fork of the Weka (http://www.cs.waikato.ac.nz/ml/weka/) data mining package. The base Weka system contains a machine learning platform which supports a variety of algorithms, and is entirely written in Java. Unfortunately, in Weka was written with GUI (swing) hooks, which the Android Java implementation (Dalvik) doesn't support. Thus, Weka can't be used on Android as-is.
+
+This project strips the non-compatible elements out of the Weka code, allowing Weka to be used on Android. This isn't a completely novel project (https://github.com/rjmarsan/Weka-for-Android), but the project hasn't been updated in a fair bit of time, and I wanted to use a newer version of Weka for my own project. This is the spoils.
+
+To load in Intellij:
 	Create project as an android project
 	In project structure, add 'jar' as an output artifact
 	Then go to build->build artifacts
 	Can check 'build on make' for automatic building
+
+========================
+How did I do it?
+========================
 
 To turn a basic Weka package into a android-compatible Weka package:
 1) Start as a Java project
@@ -16,7 +24,6 @@ To turn a basic Weka package into a android-compatible Weka package:
 7) Remove any files with Trie in the filename and an error
 8) Remove any errors that are beans related
 9) Remove any errors that are gui-related
-10) Fix (and document) any other removals
 
-List at one point:
+Files to remove as of Weka version circa 2014/9/1:
 $ rm -rf weka/gui/arffviewer/ weka/gui/beans/ weka/gui/beans/icons/ weka/gui/beans/templates/ weka/gui/beans/xml/ weka/gui/boundaryvisualizer/ weka/gui/experiment/ weka/gui/explorer/ weka/gui/filters/ weka/gui/graphvisualizer/ weka/gui/graphvisualizer/icons/ weka/gui/hierarchyvisualizer/ weka/gui/images/ weka/gui/scripting/ weka/gui/scripting/event/ weka/gui/scripting/images/ weka/gui/sql/ weka/gui/sql/event/ weka/gui/streams/ weka/gui/treevisualizer/ weka/gui/visualize/ weka/gui/visualize/plugins/ weka/gui/AttributeListPanel.java weka/gui/AttributeSelectionPanel.java weka/gui/AttributeSummaryPanel.java weka/gui/AttributeVisualizationPanel.java weka/gui/BrowserHelper.java weka/gui/CheckBoxList.java weka/gui/ComponentHelper.java weka/gui/ConverterFileChooser.java weka/gui/CostMatrixEditor.java weka/gui/CustomPanelSupplier.java weka/gui/DatabaseConnectionDialog.java weka/gui/DocumentPrinting.java weka/gui/ETable.java weka/gui/EvaluationMetricSelectionDialog.java weka/gui/ExtensionFileFilter.java weka/gui/FileEditor.java weka/gui/GenericArrayEditor.java weka/gui/GenericObjectEditorHistory.java weka/gui/GUIChooser.java weka/gui/HierarchyPropertyParser.java weka/gui/InstancesSummaryPanel.java weka/gui/JListHelper.java weka/gui/JTableHelper.java weka/gui/ListSelectorDialog.java weka/gui/Loader.java weka/gui/LogPanel.java weka/gui/LogWindow.java weka/gui/Main.java weka/gui/MainMenuExtension.java weka/gui/MemoryUsagePanel.java weka/gui/PackageManager.java weka/gui/PropertyDialog.java weka/gui/PropertyPanel.java weka/gui/PropertySelectorDialog.java weka/gui/PropertySheetPanel.java weka/gui/PropertyText.java weka/gui/PropertyValueSelector.java weka/gui/ReaderToTextPane.java weka/gui/ResultHistoryPanel.java weka/gui/SaveBuffer.java weka/gui/SelectedTagEditor.java weka/gui/SetInstancesPanel.java weka/gui/SimpleCLI.java weka/gui/SimpleCLIPanel.java weka/gui/SimpleDateFormatEditor.java weka/gui/SortedTableModel.java weka/gui/SplashWindow.java weka/gui/SysErrLog.java weka/gui/TaskLogger.java weka/gui/ViewerDialog.java weka/gui/WekaTaskMonitor.java weka/core/WekaPackageManager.java weka/classifiers/bayes/net/GUI.java weka/Run.java weka/gui/GenericObjectEditor.java weka/core/mathematicalexpression/Parser.java weka/core/mathematicalexpression/Scanner.java weka/core/json/Parser.java weka/core/json/Scanner.java weka/filters/unsupervised/instance/subsetbyexpression/Parser.java weka/filters/unsupervised/instance/subsetbyexpression/Scanner.java
